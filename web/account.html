@@ -144,7 +144,7 @@
                     <label for="validationmiddle" class="form-label">Middle name</label>
                     <input type="text" class="form-control" id="validationmiddle" placeholder="Please enter your middle name" required pattern="">
                     <div class="invalid-tooltip">
-                        Must contain a character only.
+                        Must contain characters only.
                     </div>
                 </div>
 
@@ -319,6 +319,7 @@
             var daySelect = document.getElementById("validationDay");
             var monthSelect = document.getElementById("validationMonth");
             var yearSelect = document.getElementById("validationYear");
+            var currentYear = new Date().getFullYear();
 
             // Function to generate options for day, month, and year
             function generateOptions(selectElement, start, end) {
@@ -340,7 +341,6 @@
             generateOptions(monthSelect, 1, 12);
 
             // Generate options for year (e.g., from 1900 to current year)
-            var currentYear = new Date().getFullYear();
             generateOptions(yearSelect, 1900, currentYear);
         </script>
         <script type="text/javascript">
