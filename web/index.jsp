@@ -98,6 +98,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <a class="nav-icon position-relative text-decoration-none" href="shoppingcart.html">
                             <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         </a>
+                        <a class="nav-icon position-relative text-decoration-none" href="account.html">
+                            <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                        </a>
                     </div>
                 </div>
 
