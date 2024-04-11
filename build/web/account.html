@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
     <head>
@@ -12,10 +11,12 @@
         <link rel="stylesheet" href="Resources/css/bootstrap.min.css">
         <link rel="stylesheet" href="Resources/css/templatemo.css">
         <link rel="stylesheet" href="Resources/css/custom.css">
+        <link rel="stylesheet" href="Resources/css/loginpage.css">
 
         <!-- Load fonts style after rendering the layout styles -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
         <link rel="stylesheet" href="Resources/css/fontawesome.min.css">
+
 
     </head>
 
@@ -116,88 +117,100 @@
             </div>
         </div>
 
-        <div class="container-fluid bg-light py-5">
-            <div class="col-md-6 m-auto text-center">
-                <h1 class="h1">Partnerships</h1>
-                <p>
-                    Partnering with industry-leading brands such as Asus, Acer, Dell, Lenovo, and MSI, our laptop retail company fosters collaborative relationships to provide customers with an extensive range of cutting-edge technology solutions.
-                </p>
-            </div>
+        <!-- Sign-in/Sign-up Forms -->
+        <div class="container-fluid">
+            <form class="needs-validation mx-auto" novalidate>
+                <h2 class="text-success text-center">Customer Registration</h2>
+
+                <div class="mb-3 position-relative">
+                    <label for="validationusername" class="form-label">Username</label>
+                    <div class="input-group has-validation">                   
+                        <input type="text" class="form-control" id="validationusername" aria-describedby="validationUsernamePrepend" placeholder="Please enter a unique username" required pattern="">
+                        <div class="invalid-tooltip">
+                            Must contain of 4 up to 12 characters and numbers.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 position-relative">
+                    <label for="validationfirst" class="form-label">First name</label>
+                    <input type="text" class="form-control" id="validationfirst" placeholder="Please enter your first name" required pattern="">
+                    <div class="invalid-tooltip">
+                        Must contain characters only.
+                    </div>
+                </div>
+
+                <div class="mb-3 position-relative">
+                    <label for="validationmiddle" class="form-label">Middle name</label>
+                    <input type="text" class="form-control" id="validationmiddle" placeholder="Please enter your middle name" required pattern="">
+                    <div class="invalid-tooltip">
+                        Must contain a character only.
+                    </div>
+                </div>
+
+                <div class="mb-3 position-relative">
+                    <label for="validationlast" class="form-label">Last name</label>
+                    <input type="text" class="form-control" id="validationlast" placeholder="Please enter your last name" required pattern="">
+                    <div class="invalid-tooltip">
+                        Must contain minimum of 2 characters.
+                    </div>
+                </div>
+
+                <div class="mb-3 position-relative">
+                    <label for="validationaddress" class="form-label">Complete Address</label>
+                    <input type="text" class="form-control" id="validationaddress" placeholder="Please enter your complete address" required pattern="">
+                    <div class="invalid-tooltip">
+                        Must contain characters and numbers.
+                    </div>
+                </div>
+
+                <div class="mb-3 position-relative">
+                    <label for="validationbirthday" class="form-label">Birthday</label>
+                    <div class="row">
+                        <div class="col position-relative">
+                            <select class="form-select" id="validationMonth" required>
+                                <option selected disabled value="">Month</option>
+                            </select>
+                            <div class="invalid-tooltip">
+                                Please select a valid month.
+                            </div>
+                        </div>
+                        <div class="col position-relative">
+                            <select class="form-select" id="validationDay" required>
+                                <option selected disabled value="">Day</option>
+                            </select>
+                            <div class="invalid-tooltip">
+                                Please select a valid day.
+                            </div>
+                        </div>
+                        <div class="col position-relative">
+                            <select class="form-select" id="validationYear" required>
+                                <option selected disabled value="">Year</option>
+                            </select>
+                            <div class="invalid-tooltip">
+                                Please select a valid year.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4 position-relative">
+                    <label for="validationemail" class="form-label">Mobile Number</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text" id="validationemail">+63</span>
+                        <input type="text" class="form-control" id="validationemail" aria-describedby="validationTooltipUsernamePrepend" placeholder="Please enter your mobile number" required pattern="">
+                        <div class="invalid-tooltip">
+                            Must contain 11 numbers.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2 mx-auto">
+                    <button class="btn btn-success btn-lg" type="submit">Register</button>
+                </div>
+
+            </form>
         </div>
-
-        <section class="bg-success py-4">
-            <div class="container">
-                <div class="row align-items-center py-4">
-                    <div class="col-md-8 text-white">
-                        <h1 style="text-align:right;">ACER</h1>
-                        <p style="text-align:justify;">
-                            As a premier supplier, Asus is renowned for its innovative approach to technology, offering a diverse range of high-performance laptops that cater to various needs. With a focus on quality and reliability, Asus continues to push boundaries, delivering cutting-edge products that redefine user experiences.                    
-                        </p>
-                    </div>
-                    <div class="col-md-4">
-                        <img style="max-width: 100%; height: auto;" src="Resources\products\Acer\logo.png">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="py-4">
-            <div class="container">
-                <div class="row align-items-center py-4">
-                    <div class="col-md-4">
-                        <img style="max-width: 100%; height: auto;" src="Resources\products\Asus\logo.png">
-                    </div>
-                    <div class="col-md-8 text-black">
-                        <h1>ASUS</h1>
-                        <p style="text-align:justify;">
-                            Recognized for its commitment to accessibility and affordability, Acer stands out as a reliable supplier of laptops, providing customers with versatile solutions tailored to both professional and personal use. With a global presence and a reputation for innovation, Acer remains at the forefront of the industry, consistently delivering products that combine performance and value.                    </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="bg-success py-4">
-            <div class="container">        
-                <div class="row align-items-center">
-                    <div class="col-md-8 text-white py-4">
-                        <h1 style="text-align:right;">DELL</h1>
-                        <p style="text-align:justify;">
-                            As a trusted supplier, Dell is synonymous with quality craftsmanship and advanced technology, offering a comprehensive range of laptops designed to meet the demands of modern users. With a focus on innovation and customer satisfaction, Dell continues to lead the industry, providing businesses and consumers alike with reliable computing solutions.                    </p>
-                    </div>
-                    <div class="col-md-4">
-                        <img style="max-width: 100%; height: auto;" src="Resources\products\Dell\logo.png">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="py-4">
-            <div class="container">
-                <div class="row align-items-center py-4">
-                    <div class="col-md-4">
-                        <img style="max-width: 100%; height: auto;" src="Resources\products\Lenovo\logo.png">
-                    </div>
-                    <div class="col-md-8 text-black">
-                        <h1>LENOVO</h1>
-                        <p style="text-align:justify;">
-                            Renowned for its versatility and reliability, Lenovo serves as a leading supplier of laptops, delivering products that prioritize performance, durability, and user-centric design. With a rich heritage of innovation and a global presence, Lenovo remains committed to empowering customers with technology that enhances productivity and connectivity.                    </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="bg-success py-4">
-            <div class="container">
-                <div class="row align-items-center py-4">
-                    <div class="col-md-8 text-white">
-                        <h1 style="text-align:right;">MSI</h1>
-                        <p style="text-align:justify;">
-                            With a reputation for pushing the boundaries of gaming technology, MSI stands out as a premier supplier of gaming laptops, offering cutting-edge hardware and immersive experiences for enthusiasts worldwide. Combining performance with aesthetics, MSI continues to innovate, delivering products that redefine gaming excellence and elevate user satisfaction.
-                        </p>
-                    </div>
-                    <div class="col-md-4">
-                        <img style="max-width: 100%; height: auto;" src="Resources\products\MSI\logo.png">
-                    </div>
-                </div>
-            </div>
-        </section>
-
 
         <!-- Start Footer -->
         <footer class="bg-dark" id="tempaltemo_footer">
@@ -239,7 +252,7 @@
                             <li><a class="text-decoration-none" href="/Group12">Home</a></li>
                             <li><a class="text-decoration-none" href="about.html">About Us</a></li>
                             <li><a class="text-decoration-none" href="shop.html">Shop Now</a></li>
-                            <li><a class="text-decoration-none" href="contact.html">Contact Us</a></li>
+                            <li><a class="text-decoration-none" href="contact.html"">Contact Us</a></li>
                             <li><a class="text-decoration-none" href="partner.html">Partners</a></li>
                         </ul>
                     </div>
@@ -289,7 +302,7 @@
         <!-- End Footer -->
 
         <!-- Start Script -->
-        <script src="Resources/js/jquery-1.11.0.min.js"></script>
+        <script src="Resources/js/jquery-3.7.1.min.js"></script>
         <script src="Resources/js/jquery-migrate-1.2.1.min.js"></script>
         <script src="Resources/js/bootstrap.bundle.min.js"></script>
         <script src="Resources/js/templatemo.js"></script>
@@ -301,6 +314,59 @@
             }
         </script>
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script type="text/javascript">
+            // Get the select elements
+            var daySelect = document.getElementById("validationDay");
+            var monthSelect = document.getElementById("validationMonth");
+            var yearSelect = document.getElementById("validationYear");
+
+            // Function to generate options for day, month, and year
+            function generateOptions(selectElement, start, end) {
+                for (var i = start; i <= end; i++) {
+                    // Create an option element
+                    var option = document.createElement("option");
+                    option.value = i;
+                    option.text = i;
+
+                    // Append the option to the select element
+                    selectElement.appendChild(option);
+                }
+            }
+
+            // Generate options for day (1 to 31)
+            generateOptions(daySelect, 1, 31);
+
+            // Generate options for month (1 to 12)
+            generateOptions(monthSelect, 1, 12);
+
+            // Generate options for year (e.g., from 1900 to current year)
+            var currentYear = new Date().getFullYear();
+            generateOptions(yearSelect, 1900, currentYear);
+        </script>
+        <script type="text/javascript">
+            (() => {
+                'use strict'
+
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                const forms = document.querySelectorAll('.needs-validation')
+
+                // Loop over them and prevent submission
+                Array.from(forms).forEach(form => {
+                    form.addEventListener('submit', event => {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        } else {
+                            alert('Success')
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+
+
+                })
+            })()
+        </script>
         <!-- End Script -->
     </body>
 
