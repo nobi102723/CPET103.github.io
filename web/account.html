@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="Resources/css/templatemo.css">
         <link rel="stylesheet" href="Resources/css/custom.css">
         <link rel="stylesheet" href="Resources/css/loginpage.css">
-        
+
         <!-- Load fonts style after rendering the layout styles -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
         <link rel="stylesheet" href="Resources/css/fontawesome.min.css">
@@ -118,9 +118,45 @@
         </div>
 
         <!-- Sign-in/Sign-up Forms -->
-        <div class="container-fluid">
-            <form class="needs-validation mx-auto" novalidate>
-                <h2 class="text-success text-center">Customer Registration</h2>
+        <section class="container-fluid">
+            <!-- Signin Form -->
+            <form id="signin-form" class="needs-validation mx-auto" novalidate>
+                <h2 class="text-success text-center">Sign-in</h2>
+
+                <div class="mb-4 position-relative">
+                    <label for="loginusername" class="form-label">Username</label>
+                    <div class="input-group has-validation">                   
+                        <input type="text" class="form-control" id="loginusername" aria-describedby="loginusernamePrepend" placeholder="Please enter your username" required>
+                        <div class="invalid-tooltip">
+                            Template
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4 position-relative">
+                    <label for="loginpassword" class="form-label">Password</label>
+                    <div class="input-group has-validation">                   
+                        <input type="text" class="form-control" id="loginpassword" aria-describedby="loginpasswordPrepend" placeholder="Please enter your password" required>
+                        <div class="invalid-tooltip">
+                            Template
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-2 d-grid gap-2 mx-auto">
+                    <button class="btn btn-success btn-lg" type="submit">Login</button>
+                </div>
+
+                <div class="text-center">
+                    <span style="margin-right: -10px;">Don't have an account yet?</span>
+                    <button id="toggle-signup" type="button" class="btn btn-link" style="color: black; font-weight: bold;">Register</button>
+                </div>
+
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signup-form" class="needs-validation mx-auto" novalidate style="display: none;">
+                <h2 class="text-success text-center">Sign-up</h2>
 
                 <div class="mb-3 position-relative">
                     <label for="validationusername" class="form-label">Username</label>
@@ -133,26 +169,44 @@
                 </div>
 
                 <div class="mb-3 position-relative">
-                    <label for="validationfirst" class="form-label">First name</label>
-                    <input type="text" class="form-control" id="validationfirst" placeholder="Please enter your first name" required pattern="">
-                    <div class="invalid-tooltip">
-                        Must contain characters only.
+                    <label for="validationpassword" class="form-label">Password</label>
+                    <div class="input-group has-validation">                   
+                        <input type="password" class="form-control" id="validationpassword" placeholder="Must contain of 8 up to 12 characters and numbers." required pattern="">
+                        <div class="invalid-tooltip">
+                            Must contain at least 1 capital letter, 1 small letter, 1 number, and 1 special character (!@#$&*)
+                        </div>
                     </div>
                 </div>
 
                 <div class="mb-3 position-relative">
-                    <label for="validationmiddle" class="form-label">Middle name</label>
-                    <input type="text" class="form-control" id="validationmiddle" placeholder="Please enter your middle name" required pattern="">
+                    <label for="validationconfirmp" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="validationconfirmp" placeholder="Please confirm your password" required>
                     <div class="invalid-tooltip">
-                        Must contain characters only.
+                        Must be the same password.
                     </div>
                 </div>
 
-                <div class="mb-3 position-relative">
-                    <label for="validationlast" class="form-label">Last name</label>
-                    <input type="text" class="form-control" id="validationlast" placeholder="Please enter your last name" required pattern="">
-                    <div class="invalid-tooltip">
-                        Must contain minimum of 2 characters.
+                <div class="row">
+                    <div class="col-md-4 mb-3 position-relative">
+                        <label for="validationfirst" class="form-label">First name</label>
+                        <input type="text" class="form-control" id="validationfirst" placeholder="First Name" required pattern="">
+                        <div class="invalid-tooltip">
+                            Must contain characters only.
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 position-relative">
+                        <label for="validationmiddle" class="form-label">Middle name</label>
+                        <input type="text" class="form-control" id="validationmiddle" placeholder="Middle Name" required pattern="">
+                        <div class="invalid-tooltip">
+                            Must contain characters only.
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 position-relative">
+                        <label for="validationlast" class="form-label">Last name</label>
+                        <input type="text" class="form-control" id="validationlast" placeholder="Last Name" required pattern="">
+                        <div class="invalid-tooltip">
+                            Must contain minimum of 2 characters.
+                        </div>
                     </div>
                 </div>
 
@@ -168,7 +222,7 @@
                     <label for="validationbirthday" class="form-label">Birthday</label>
                     <div class="row">
                         <div class="col position-relative">
-                            <select class="form-select" id="validationMonth" required pattern="">
+                            <select class="form-select" id="validationMonth" required>
                                 <option selected disabled value="">Month</option>
                             </select>
                             <div class="invalid-tooltip">
@@ -176,7 +230,7 @@
                             </div>
                         </div>
                         <div class="col position-relative">
-                            <select class="form-select" id="validationDay" required pattern="">
+                            <select class="form-select" id="validationDay" required>
                                 <option selected disabled value="">Day</option>
                             </select>
                             <div class="invalid-tooltip">
@@ -184,7 +238,7 @@
                             </div>
                         </div>
                         <div class="col position-relative">
-                            <select class="form-select" id="validationYear" required pattern="">
+                            <select class="form-select" id="validationYear" required>
                                 <option selected disabled value="">Year</option>
                             </select>
                             <div class="invalid-tooltip">
@@ -205,12 +259,17 @@
                     </div>
                 </div>
 
-                <div class="d-grid gap-2 mx-auto">
+                <div class="mb-2 d-grid gap-2 mx-auto">
                     <button class="btn btn-success btn-lg" type="submit">Register</button>
                 </div>
 
+                <div class="text-center">
+                    <span style="margin-right: -10px;">Already have an account?</span>
+                    <button id="toggle-signin" type="button" class="btn btn-link" style="color: black; font-weight: bold;">Login</button>
+                </div>
+
             </form>
-        </div>
+        </section>
 
         <!-- Start Footer -->
         <footer class="bg-dark" id="tempaltemo_footer">
@@ -308,12 +367,31 @@
         <script src="Resources/js/templatemo.js"></script>
         <script src="Resources/js/custom.js"></script>
         <script src="Resources/js/search-function.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/parsleyjs/dist/parsley.min.js"></script>
         <script type="text/javascript" >
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
             }
         </script>
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script type="text/javascript">
+            // Function to validate if the password and confirm password fields match
+            function validatePassword() {
+                var password = document.getElementById("validationpassword").value;
+                var confirmPassword = document.getElementById("validationconfirmp").value;
+
+                // Check if the passwords match
+                if (password !== confirmPassword) {
+                    document.getElementById("validationconfirmp").setCustomValidity("Must be the same password.");
+                } else {
+                    document.getElementById("validationconfirmp").setCustomValidity("");
+                }
+            }
+
+            // Add event listeners to validate on input change
+            document.getElementById("validationpassword").addEventListener("input", validatePassword);
+            document.getElementById("validationconfirmp").addEventListener("input", validatePassword);
+        </script>
         <script type="text/javascript">
             // Get the select elements
             var daySelect = document.getElementById("validationDay");
@@ -345,27 +423,45 @@
         </script>
         <script type="text/javascript">
             (() => {
-                'use strict'
+                'use strict';
 
                 // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                const forms = document.querySelectorAll('.needs-validation')
+                const forms = document.querySelectorAll('.needs-validation');
 
                 // Loop over them and prevent submission
                 Array.from(forms).forEach(form => {
                     form.addEventListener('submit', event => {
                         if (!form.checkValidity()) {
-                            event.preventDefault()
-                            event.stopPropagation()
+                            event.preventDefault();
+                            event.stopPropagation();
                         } else {
-                            alert('Success')
+                            alert('Success');
                         }
 
-                        form.classList.add('was-validated')
-                    }, false)
+                        form.classList.add('was-validated');
+                    }, false);
 
 
-                })
-            })()
+                });
+            })();
+        </script>
+        <script type="text/javascript">
+            // Toggles between Sign-in and Sign-up form
+            const signInForm = document.getElementById("signin-form");
+            const signUpForm = document.getElementById("signup-form");
+            const toggleSignUpButton = document.getElementById("toggle-signup");
+            const toggleSignInButton = document.getElementById("toggle-signin");
+
+            toggleSignUpButton.addEventListener("click", () => {
+                signInForm.style.display = "none";
+                signUpForm.style.display = "block";
+            });
+
+            toggleSignInButton.addEventListener("click", () => {
+                signInForm.style.display = "block";
+                signUpForm.style.display = "none";
+            });
+
         </script>
         <!-- End Script -->
     </body>
