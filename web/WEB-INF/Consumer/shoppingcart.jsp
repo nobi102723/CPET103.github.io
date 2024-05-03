@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Shopping Cart</title>
 
+        <link href="${pageContext.request.contextPath}/Resources/img/favicon.png" rel="icon">
         <link rel="apple-touch-icon" href="${pageContext.request.contextPath}/Resources/img/apple-icon.png">
         <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/Resources/img/favicon.ico">
 
@@ -22,8 +24,7 @@
     </head>
 
     <body>
-        <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-        <jsp:include page="/WEB-INF/Navigation/TopNav.jsp"/>
+        <jsp:include page="../Consumer/Navigation/TopNav.jsp"/>
 
         <!-- Shopping Cart -->
         <div id="cart-items"></div>
@@ -62,7 +63,18 @@
 
         </div>
 
-        <jsp:include page="/WEB-INF/Navigation/Footer.jsp"/>
+        <!-- Modal -->
+        <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <p id="modalMessage"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <jsp:include page="../Consumer/Navigation/Footer.jsp"/>
 
         <!-- Start Script -->
         <script src="${pageContext.request.contextPath}/Resources/js/jquery-1.11.0.min.js"></script>
@@ -71,19 +83,29 @@
         <script src="${pageContext.request.contextPath}/Resources/js/templatemo.js"></script>
         <script src="${pageContext.request.contextPath}/Resources/js/custom.js"></script>
         <script>
+            function showModal(message) {
+                // Set the message content
+                document.getElementById("modalMessage").textContent = message;
+
+                // Show the modal
+                var myModal = new bootstrap.Modal(document.getElementById('messageModal'));
+                myModal.show();
+
+                // Hide the modal after 3 seconds
+                setTimeout(function () {
+                    myModal.hide();
+                }, 3000);
+            }
+
+            // Add event listener to checkout button
             document.getElementById('checkoutbtn').addEventListener('click', function () {
                 var cartItems = document.querySelectorAll('.cart-info');
                 if (cartItems.length > 0) {
-                    alert('Orders have been placed.');
+                    showModal('Orders have been placed.');
                 } else {
-                    alert('Your shopping cart is empty. Please add products before checking out.');
+                    showModal('Your shopping cart is empty. Please add products before checking out.');
                 }
             });
-        </script>
-        <script type="text/javascript" >
-            function googleTranslateElementInit() {
-                new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-            }
         </script>
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         <!-- End Script -->

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html lang="en">
 
     <head>
@@ -6,6 +7,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link href="${pageContext.request.contextPath}/Resources/img/favicon.png" rel="icon">
         <link rel="apple-touch-icon" href="${pageContext.request.contextPath}/Resources/img/apple-icon.png">
         <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/Resources/img/favicon.ico">
 
@@ -20,7 +22,7 @@
     </head>
 
     <body>
-        <jsp:include page="/WEB-INF/Navigation/TopNav.jsp"/>
+        <jsp:include page="../Consumer/Navigation/TopNav.jsp"/>
 
         <div class="container-fluid bg-light py-5">
             <div class="col-md-6 m-auto text-center">
@@ -104,7 +106,7 @@
             </div>
         </section>
 
-        <jsp:include page="/WEB-INF/Navigation/Footer.jsp"/>
+        <jsp:include page="../Consumer/Navigation/Footer.jsp"/>
 
         <!-- Start Script -->
         <script src="${pageContext.request.contextPath}/Resources/js/jquery-1.11.0.min.js"></script>
@@ -113,6 +115,7 @@
         <script src="${pageContext.request.contextPath}/Resources/js/templatemo.js"></script>
         <script src="${pageContext.request.contextPath}/Resources/js/custom.js"></script>
         <script type="text/javascript" >
+            // Google Translation
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
             }

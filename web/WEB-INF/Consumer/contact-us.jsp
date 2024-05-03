@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html lang="en">
 
     <head>
@@ -6,6 +7,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link href="${pageContext.request.contextPath}/Resources/img/favicon.png" rel="icon">
         <link rel="apple-touch-icon" href="${pageContext.request.contextPath}/Resources/img/apple-icon.png">
         <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/Resources/img/favicon.ico">
 
@@ -22,7 +24,7 @@
     </head>
 
     <body>
-        <jsp:include page="/WEB-INF/Navigation/TopNav.jsp"/>
+        <jsp:include page="/WEB-INF/Consumer/Navigation/TopNav.jsp"/>
 
         <!-- Start Content Page -->
         <div class="container-fluid bg-light py-5">
@@ -67,15 +69,27 @@
                     </div>
                     <div class="row">
                         <div class="col text-end mt-2">
-                            <button type="submit" class="btn btn-success btn-lg px-3" id="submitform">Let’s Talk</button>
+                            <button type="submit" class="btn btn-success btn-lg px-3" id="submitform">Let's Talk</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
         <!-- End Contact -->
+        
+        <!-- Modal -->
+        <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <p id="modalMessage"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
 
-        <jsp:include page="/WEB-INF/Navigation/Footer.jsp"/>
+        <jsp:include page="/WEB-INF/Consumer/Navigation/Footer.jsp"/>
 
         <!-- Start Script -->
         <script src="${pageContext.request.contextPath}/Resources/js/jquery-1.11.0.min.js"></script>
@@ -84,11 +98,27 @@
         <script src="${pageContext.request.contextPath}/Resources/js/templatemo.js"></script>
         <script src="${pageContext.request.contextPath}/Resources/js/custom.js"></script>
         <script>
+            function showModal(message) {
+                // Set the message content
+                document.getElementById("modalMessage").textContent = message;
+
+                // Show the modal
+                var myModal = new bootstrap.Modal(document.getElementById('messageModal'));
+                myModal.show();
+
+                // Hide the modal after 3 seconds
+                setTimeout(function () {
+                    myModal.hide();
+                }, 3000);
+            }
+            
             document.getElementById('submitform').addEventListener('click', function () {
-                alert("You're all set! Your email has been sent. Please expect our response shortly.");
+                showModal("You're all set! Your email has been sent. Please expect our response shortly.");
+                event.preventDefault();
             });
         </script>
         <script type="text/javascript" >
+            // Google Translation
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
             }

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html lang="en">
 
     <head>
@@ -6,6 +7,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link href="${pageContext.request.contextPath}/Resources/img/favicon.png" rel="icon">
         <link rel="apple-touch-icon" href="${pageContext.request.contextPath}/Resources/img/apple-icon.png">
         <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/Resources/img/favicon.ico">
 
@@ -19,8 +21,7 @@
     </head>
 
     <body>
-        <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-        <jsp:include page="/WEB-INF/Navigation/TopNav.jsp"/>
+        <jsp:include page="../Consumer/Navigation/TopNav.jsp"/>
 
         <!-- Start Content -->
         <div class="container py-5">
@@ -187,7 +188,7 @@
         </section>
         <!--End Brands-->
 
-        <jsp:include page="/WEB-INF/Navigation/Footer.jsp"/>
+        <jsp:include page="../Consumer/Navigation/Footer.jsp"/>
 
         <!-- Start Script -->
         <script src="${pageContext.request.contextPath}/Resources/js/jquery-1.11.0.min.js"></script>
@@ -195,14 +196,13 @@
         <script src="${pageContext.request.contextPath}/Resources/js/bootstrap.bundle.min.js"></script>
         <script src="${pageContext.request.contextPath}/Resources/js/templatemo.js"></script>
         <script src="${pageContext.request.contextPath}/Resources/js/custom.js"></script>
-        <script src="${pageContext.request.contextPath}/Resources/js/search-function.js"></script>
-        <script>
+        <script type="text/javascript">
             document.addEventListener('DOMContentLoaded', function () {
-                for (let i = 0; i < 15; i++) {
+                for (let i = 0; i < 15; i++) { //this displays the product 15 times
                     addProducts();
                 }
             });
-            function addProducts() {
+            function addProducts() { //function for adding multiple products so that i have control on how much products i can add
                 const container = document.getElementById('productsCont');
                 const productHTML = `
                         <div class="col-md-4">
@@ -243,10 +243,11 @@
                             </div>
                         </div>
                     `;
-                container.insertAdjacentHTML('beforeend', productHTML);
+                container.insertAdjacentHTML('beforeend', productHTML); //insert/append the div to the webpage
             }
         </script>
         <script type="text/javascript" >
+            // Google Translation
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
             }

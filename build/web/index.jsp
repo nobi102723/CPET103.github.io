@@ -14,6 +14,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link href="${pageContext.request.contextPath}/Resources/img/favicon.png" rel="icon">
         <link rel="apple-touch-icon" href="${pageContext.request.contextPath}/Resources/img/apple-icon.png">
         <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/Resources/img/favicon.ico">
 
@@ -29,7 +30,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     </head>
 
     <body>
-        <jsp:include page="/WEB-INF/Navigation/TopNav.jsp"/>
+        <jsp:include page="/WEB-INF/Consumer/Navigation/TopNav.jsp"/>
 
         <!-- Start Banner Hero -->
         <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -149,7 +150,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 <div class="row">
                     <div class="col-12 col-md-4 mb-4">
                         <div class="card h-100">
-                            <a href="${pageContext.request.contextPath}/products/product">
+                            <a href="${pageContext.request.contextPath}/shop/product">
                                 <img src="./Resources/products/Dell/1.png" class="card-img-top" alt="...">
                             </a>
                             <div class="card-body">
@@ -163,7 +164,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                                     </li>
                                     <li class="text-right">₱79,990.00</li>
                                 </ul>
-                                <a href="${pageContext.request.contextPath}/products/product" class="h2 text-decoration-none text-dark" id="11">XPS 15 Laptop</a>
+                                <a href="${pageContext.request.contextPath}/shop/product" class="h2 text-decoration-none text-dark" id="11">XPS 15 Laptop</a>
                                 <p class="card-text">
                                     Bring your ideas to life with the XPS 15. The 16:10 4-sided InfinityEdge OLED display delivers brilliance that makes your creation as vivid as your imagination.
                                 </p>
@@ -173,7 +174,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                     </div>
                     <div class="col-12 col-md-4 mb-4">
                         <div class="card h-100">
-                            <a href="${pageContext.request.contextPath}/products/product">
+                            <a href="${pageContext.request.contextPath}/shop/product">
                                 <img src="./Resources/products/Dell/5.png" class="card-img-top" alt="...">
                             </a>
                             <div class="card-body">
@@ -187,7 +188,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                                     </li>
                                     <li class="text-right">₱99,999.00</li>
                                 </ul>
-                                <a href="${pageContext.request.contextPath}/products/product" class="h2 text-decoration-none text-dark" id="15">XPS 13 Plus Laptop</a>
+                                <a href="${pageContext.request.contextPath}/shop/product" class="h2 text-decoration-none text-dark" id="15">XPS 13 Plus Laptop</a>
                                 <p class="card-text">
                                     Designed from the ground up to be our most powerful 13-inch XPS yet, featuring the latest Intel® 12th gen processors at 28W.
                                 </p>
@@ -197,7 +198,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                     </div>
                     <div class="col-12 col-md-4 mb-4">
                         <div class="card h-100">
-                            <a href="${pageContext.request.contextPath}/products/product">
+                            <a href="${pageContext.request.contextPath}/shop/product">
                                 <img src="./Resources/products/Dell/3.png" class="card-img-top" alt="...">
                             </a>
                             <div class="card-body">
@@ -224,7 +225,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         </section>
         <!-- End Featured Product -->
 
-        <jsp:include page="/WEB-INF/Navigation/Footer.jsp"/>
+        <jsp:include page="/WEB-INF/Consumer/Navigation/Footer.jsp"/>
 
         <!-- Start Script -->
         <script src="${pageContext.request.contextPath}/Resources/js/jquery-3.7.1.min.js"></script>
@@ -233,6 +234,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <script src="${pageContext.request.contextPath}/Resources/js/templatemo.js"></script>
         <script src="${pageContext.request.contextPath}/Resources/js/custom.js"></script>
         <script type="text/javascript" >
+            // Google Translation
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
             }

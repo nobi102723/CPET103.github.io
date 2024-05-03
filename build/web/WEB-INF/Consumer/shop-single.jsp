@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html lang="en">
 
     <head>
@@ -6,6 +7,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link href="${pageContext.request.contextPath}/Resources/img/favicon.png" rel="icon">
         <link rel="apple-touch-icon" href="${pageContext.request.contextPath}/Resources/img/apple-icon.png">
         <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/Resources/img/favicon.ico">
 
@@ -23,8 +25,7 @@
     </head>
 
     <body>
-        <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-        <jsp:include page="/WEB-INF/Navigation/TopNav.jsp"/>
+        <jsp:include page="../Consumer/Navigation/TopNav.jsp"/>
 
         <!-- Open Content -->
         <section class="bg-light">
@@ -126,8 +127,19 @@
             </div>
         </section>
         <!-- End Article -->
+        
+        <!-- Modal -->
+            <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body text-center">
+                            <p id="modalMessage"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <jsp:include page="/WEB-INF/Navigation/Footer.jsp"/>
+        <jsp:include page="../Consumer/Navigation/Footer.jsp"/>
 
         <!-- Start Script -->
         <script src="${pageContext.request.contextPath}/Resources/js/jquery-3.7.1.min.js"></script>
@@ -136,21 +148,22 @@
         <script src="${pageContext.request.contextPath}/Resources/js/templatemo.js"></script>
         <script src="${pageContext.request.contextPath}/Resources/js/custom.js"></script>
         <script src="${pageContext.request.contextPath}/Resources/js/slick.min.js"></script>
-        <script>
+        <script type="text/javascript">
+            //just a random javascript for randomizing the number of comments
             const randomComments = Math.floor(Math.random() * 50) + 1;
             const randomCommentsElement = document.getElementById('randomComments');
             if (randomCommentsElement) {
                 randomCommentsElement.textContent = randomComments;
             }
         </script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                for (let i = 0; i < 15; i++) {
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function () { 
+                for (let i = 0; i < 15; i++) { //this displays the product 15 times in the "Related Product"
                     addProducts();
                 }
                 initializeCarousel()
             });
-            function addProducts() {
+            function addProducts() { //function for adding multiple products so that i have control on how much products i can add
                 const container = document.getElementById('carousel-related-product');
                 const productHTML = `
                         <div class="p-2 pb-3">
@@ -191,9 +204,9 @@
                             </div>
                         </div>
                     `;
-                container.insertAdjacentHTML('beforeend', productHTML);
+                container.insertAdjacentHTML('beforeend', productHTML); //insert/append the div to the webpage
             }
-            function initializeCarousel() {
+            function initializeCarousel() { //This function fixes the products on "Related Products" so that they're aligned.
                 $('#carousel-related-product').slick({
                     infinite: true,
                     arrows: false,
@@ -226,13 +239,28 @@
                 });
             }
         </script>
-        <script>
+        <script type="text/javascript">
+            function showModal(message) {
+                // Set the message content
+                document.getElementById("modalMessage").textContent = message;
+
+                // Show the modal
+                var myModal = new bootstrap.Modal(document.getElementById('messageModal'));
+                myModal.show();
+
+                // Hide the modal after 3 seconds
+                setTimeout(function () {
+                    myModal.hide();
+                }, 3000);
+            }
+            
             document.getElementById('addToCartButton').addEventListener('click', function () {
                 const productName = document.getElementById('ptitle').textContent.trim();
-                alert(productName + ' has been added to the shopping cart');
+                showModal(productName + ' has been added to the shopping cart');
             });
         </script>
-        <script type="text/javascript" >
+        <script type="text/javascript">
+            // Google Translation
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
             }

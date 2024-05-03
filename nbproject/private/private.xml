@@ -3,8 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/NITRO/Documents/NetBeansProjects/Group12/web/WEB-INF/Consumer/shop.jsp</file>
-            <file>file:/C:/Users/NITRO/Documents/NetBeansProjects/Group12/web/index.jsp</file>
+            <file>file:/C:/Users/NITRO/Documents/NetBeansProjects/Group12/src/java/ph/pup/itech/group12/controller/consumer.java</file>
+            <file>file:/C:/Users/NITRO/Documents/NetBeansProjects/Group12/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/NITRO/Documents/NetBeansProjects/Group12/web/WEB-INF/Employee/Dashboard.jsp</file>
+            <file>file:/C:/Users/NITRO/Documents/NetBeansProjects/Group12/src/java/ph/pup/itech/group12/controller/admin.java</file>
+            <file>file:/C:/Users/NITRO/Documents/NetBeansProjects/Group12/web/WEB-INF/Employee/Inventory.jsp</file>
+            <file>file:/C:/Users/NITRO/Documents/NetBeansProjects/Group12/web/WEB-INF/Employee/Navigation/TopNav.jsp</file>
         </group>
     </open-files>
 </project-private>

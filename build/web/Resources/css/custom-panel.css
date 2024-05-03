@@ -1,0 +1,8 @@
+body {
+    background-color: #59ab6e;
+}
+.breadcrumb-item a,
+.breadcrumb-item.active {
+    color: white !important;
+    font-weight: bold;
+}

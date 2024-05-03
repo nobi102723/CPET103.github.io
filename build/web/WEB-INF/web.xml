@@ -4,6 +4,10 @@
         <servlet-name>consumer</servlet-name>
         <servlet-class>ph.pup.itech.group12.controller.consumer</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>admin</servlet-name>
+        <servlet-class>ph.pup.itech.group12.controller.admin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>consumer</servlet-name>
         <url-pattern>/about-us</url-pattern>
@@ -31,6 +35,14 @@
     <servlet-mapping>
         <servlet-name>consumer</servlet-name>
         <url-pattern>/shopping-cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admin</servlet-name>
+        <url-pattern>/admin/dashboard</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admin</servlet-name>
+        <url-pattern>/admin/dashboard/inventory</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

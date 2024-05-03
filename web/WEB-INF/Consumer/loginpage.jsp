@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html lang="en">
 
     <head>
@@ -5,6 +7,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link href="${pageContext.request.contextPath}/Resources/img/favicon.png" rel="icon">
         <link rel="apple-touch-icon" href="${pageContext.request.contextPath}/Resources/img/apple-icon.png">
         <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/Resources/img/favicon.ico">
 
@@ -15,12 +18,10 @@
         <!-- Load fonts style after rendering the layout styles -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/css/fontawesome.min.css">
-
-
     </head>
 
     <body>
-        <jsp:include page="/WEB-INF/Navigation/TopNav.jsp"/>
+        <jsp:include page="../Consumer/Navigation/TopNav.jsp"/>
 
         <!-- Sign-in/Sign-up Forms -->
         <section class="container-fluid">
@@ -33,7 +34,7 @@
                     <div class="input-group has-validation">                   
                         <input type="text" class="form-control" id="loginusername" aria-describedby="loginusernamePrepend" placeholder="Please enter your username" required>
                         <div class="invalid-tooltip">
-                            Template
+                            Please enter a username.
                         </div>
                     </div>
                 </div>
@@ -43,13 +44,13 @@
                     <div class="input-group has-validation">                   
                         <input type="text" class="form-control" id="loginpassword" aria-describedby="loginpasswordPrepend" placeholder="Please enter your password" required>
                         <div class="invalid-tooltip">
-                            Template
+                            Please enter a password.
                         </div>
                     </div>
                 </div>
 
                 <div class="mb-2 d-grid gap-2 mx-auto">
-                    <button class="btn btn-success btn-lg" type="submit">Login</button>
+                    <button class="btn btn-success btn-lg" type="submit" disabled>Login</button>
                 </div>
 
                 <div class="text-center">
@@ -175,12 +176,21 @@
 
             </form>
 
-            <!-- Modal for Successful Registration/Login) -->
+            <!-- Modal -->
+            <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body text-center">
+                            <p id="modalMessage"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
         </section>
 
-        <jsp:include page="/WEB-INF/Navigation/Footer.jsp"/>
+        <jsp:include page="../Consumer/Navigation/Footer.jsp"/>
 
         <!-- Start Script -->
         <script src="${pageContext.request.contextPath}/Resources/js/jquery-3.7.1.min.js"></script>
@@ -189,6 +199,7 @@
         <script src="${pageContext.request.contextPath}/Resources/js/templatemo.js"></script>
         <script src="${pageContext.request.contextPath}/Resources/js/custom.js"></script>
         <script type="text/javascript" >
+            // Google Translation
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
             }
@@ -238,6 +249,20 @@
             generateOptions(yearSelect, 1900, currentYear);
         </script>
         <script type="text/javascript">
+            function showModal(message) {
+                // Set the message content
+                document.getElementById("modalMessage").textContent = message;
+
+                // Show the modal
+                var myModal = new bootstrap.Modal(document.getElementById('messageModal'));
+                myModal.show();
+
+                // Hide the modal after 3 seconds
+                setTimeout(function () {
+                    myModal.hide();
+                }, 3000);
+            }
+
             // Handles Form Validation
             $(document).ready(function () {
                 $('.needs-validation').submit(function (event) {
@@ -246,7 +271,8 @@
                         event.preventDefault();
                         event.stopPropagation();
                     } else {
-                        alert("Form submitted successfully!");
+                        showModal("You Successfully Registered an Account!");
+                        event.preventDefault();
                     }
 
                     form.addClass('was-validated');

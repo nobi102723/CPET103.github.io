@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html lang="en">
 
     <head>
@@ -6,7 +7,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="Resources/img/apple-icon.png">
+        <link href="${pageContext.request.contextPath}/Resources/img/favicon.png" rel="icon">
+        <link rel="apple-touch-icon" href="${pageContext.request.contextPath}/Resources/img/apple-icon.png">
         <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/Resources/img/favicon.ico">
 
         <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/css/bootstrap.min.css">
@@ -16,17 +18,10 @@
         <!-- Load fonts style after rendering the layout styles -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/css/fontawesome.min.css">
-        <!--
-            
-        TemplateMo 559 Zay Shop
-        
-        https://templatemo.com/tm-559-zay-shop
-        
-        -->
     </head>
 
     <body>
-        <jsp:include page="../Navigation/TopNav.jsp"/>
+        <jsp:include page="../Consumer/Navigation/TopNav.jsp"/>
 
         <section class="bg-success py-5">
             <div class="container">
@@ -98,8 +93,8 @@
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-6 col-lg-3 pb-5">
                     <div class="h-100 py-5 shadow text-center" style="background-color:rgba(255, 255, 255, 0.596)">
-                        <img src="Resources/img/silhouette.png" class="img-fluid" style="height: 415px;">
-                        <h2 class="h5 mt-4 text-center">Nabi Nobi</h2>
+                        <img src="Resources/img/molas.png" class="img-fluid" style="height: 415px;">
+                        <h2 class="h5 mt-4 text-center">Nicole Justine Molas</h2>
                         <p class="text-muted text-center">Chief of Logistics</p>
                     </div>
                 </div>
@@ -114,8 +109,8 @@
 
                 <div class="col-md-6 col-lg-3 pb-5">
                     <div class="h-100 py-5 shadow text-center" style="background-color:rgba(255, 255, 255, 0.596)">
-                        <img src="Resources/img/silhouette.png" class="img-fluid" style="height: 415px;">
-                        <h2 class="h5 mt-4 text-center">Raizza Mae Llanes</h2>
+                        <img src="Resources/img/namias.png" class="img-fluid" style="height: 415px;">
+                        <h2 class="h5 mt-4 text-center">Mary Norelle Namias</h2>
                         <p class="text-muted text-center">Customer Support Manager</p>
                     </div>
                 </div>
@@ -123,7 +118,7 @@
         </section>
         <!--End Brands-->
 
-        <jsp:include page="/WEB-INF/Navigation/Footer.jsp"/>
+        <jsp:include page="../Consumer/Navigation/Footer.jsp"/>
 
         <!-- Start Script -->
         <script src="${pageContext.request.contextPath}/Resources/js/jquery-1.11.0.min.js"></script>
@@ -132,6 +127,7 @@
         <script src="${pageContext.request.contextPath}/Resources/js/templatemo.js"></script>
         <script src="${pageContext.request.contextPath}/Resources/js/custom.js"></script>
         <script type="text/javascript" >
+            // Google Translation
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
             }
