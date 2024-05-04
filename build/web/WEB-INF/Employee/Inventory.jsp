@@ -21,7 +21,7 @@
         <link href="https://fonts.gstatic.com" rel="preconnect">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/css/fontawesome.min.css">
-        
+
     </head>
 
     <body>
@@ -88,108 +88,108 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Unity Pugh</td>
-                                            <td>123456789</td>
-                                            <td>Curicó</td>
-                                            <td>2005/02/11</td>
+                                            <td>ASUS Vivobook 14X OLED</td>
+                                            <td>845209713</td>
+                                            <td>Carl</td>
+                                            <td>02/02/2024</td>
                                             <td>37%</td>
                                         </tr>
                                         <tr>
-                                            <td>Theodore Duran</td>
-                                            <td>2</td>
-                                            <td>Dhanbad</td>
-                                            <td>1999/04/07</td>
+                                            <td>Aspire Vero AV15-51-78G8</td>
+                                            <td>326547891</td>
+                                            <td>Nicole</td>
+                                            <td>04/07/2024</td>
                                             <td>97%</td>
                                         </tr>
                                         <tr>
-                                            <td>Kylie Bishop</td>
-                                            <td>3</td>
-                                            <td>Norman</td>
-                                            <td>2005/09/08</td>
+                                            <td>XPS 15 Laptop</td>
+                                            <td>970185324</td>
+                                            <td>Norelle</td>
+                                            <td>01/28/2024</td>
                                             <td>63%</td>
                                         </tr>
                                         <tr>
-                                            <td>Willow Gilliam</td>
-                                            <td>1</td>
-                                            <td>Amqui</td>
-                                            <td>2009/29/11</td>
+                                            <td>ProArt Studiobook Pro 16 OLED</td>
+                                            <td>582716403</td>
+                                            <td>Carl</td>
+                                            <td>01/25/2024</td>
                                             <td>30%</td>
                                         </tr>
                                         <tr>
-                                            <td>Blossom Dickerson</td>
-                                            <td>1</td>
-                                            <td>Kempten</td>
-                                            <td>2006/11/09</td>
+                                            <td>XPS 17 Laptop</td>
+                                            <td>413869275</td>
+                                            <td>Nicole</td>
+                                            <td>05/01/2024</td>
                                             <td>17%</td>
                                         </tr>
                                         <tr>
-                                            <td>Elliott Snyder</td>
-                                            <td>1</td>
-                                            <td>Enines</td>
-                                            <td>2006/03/08</td>
+                                            <td>IdeaPad Slim 3i</td>
+                                            <td>239657814</td>
+                                            <td>Norelle</td>
+                                            <td>03/24/2024</td>
                                             <td>57%</td>
                                         </tr>
                                         <tr>
-                                            <td>Castor Pugh</td>
-                                            <td>1</td>
-                                            <td>Neath</td>
-                                            <td>2014/23/12</td>
+                                            <td>Lenovo ThinkBook ThinkBook 16</td>
+                                            <td>528496137</td>
+                                            <td>Carl</td>
+                                            <td>02/22/2024</td>
                                             <td>93%</td>
                                         </tr>
                                         <tr>
-                                            <td>Pearl Carlson</td>
-                                            <td>1</td>
-                                            <td>Cobourg</td>
-                                            <td>2014/31/08</td>
+                                            <td>MSI GF63 THIN 11UC -1467PH</td>
+                                            <td>184973562</td>
+                                            <td>Nicole</td>
+                                            <td>04/31/2024</td>
                                             <td>100%</td>
                                         </tr>
                                         <tr>
-                                            <td>Deirdre Bridges</td>
-                                            <td>1</td>
-                                            <td>Eberswalde-Finow</td>
-                                            <td>2014/26/08</td>
+                                            <td>ASUS Chromebook CX1</td>
+                                            <td>765432198</td>
+                                            <td>Norelle</td>
+                                            <td>03/16/2024</td>
                                             <td>44%</td>
                                         </tr>
                                         <tr>
-                                            <td>Daniel Baldwin</td>
-                                            <td>1</td>
-                                            <td>Eberswalde-Finow</td>
-                                            <td>2000/11/01</td>
+                                            <td>ALIENWARE X16 Gaming Laptop</td>
+                                            <td>752984163</td>
+                                            <td>Carl</td>
+                                            <td>11/11/2023</td>
                                             <td>33%</td>
                                         </tr>
                                         <tr>
-                                            <td>Phelan Kane</td>
-                                            <td>1</td>
-                                            <td>Germersheim</td>
-                                            <td>1999/16/04</td>
+                                            <td>Zenbook Pro Duo 15 OLED</td>
+                                            <td>619837245</td>
+                                            <td>Nicole</td>
+                                            <td>04/07/2024</td>
                                             <td>77%</td>
                                         </tr>
                                         <tr>
-                                            <td>Quentin Salas</td>
-                                            <td>1</td>
-                                            <td>Los Andes</td>
-                                            <td>2011/26/01</td>
+                                            <td>ThinkPad E16 AMD G1</td>
+                                            <td>874305192</td>
+                                            <td>Norelle</td>
+                                            <td>02/23/2024</td>
                                             <td>49%</td>
                                         </tr>
                                         <tr>
-                                            <td>Armand Suarez</td>
-                                            <td>1</td>
-                                            <td>Funtua</td>
-                                            <td>1999/06/11</td>
+                                            <td>Lenovo ThinkBook ThinkBook 16</td>
+                                            <td>193725846</td>
+                                            <td>Carl</td>
+                                            <td>04/06/2024</td>
                                             <td>9%</td>
                                         </tr>
                                         <tr>
-                                            <td>Gretchen Rogers</td>
-                                            <td>1</td>
-                                            <td>Moxhe</td>
-                                            <td>1998/26/10</td>
+                                            <td>MSI MODERN 14 B7M -275PH</td>
+                                            <td>468213957</td>
+                                            <td>Nicole</td>
+                                            <td>02/18/2024</td>
                                             <td>24%</td>
                                         </tr>
                                         <tr>
-                                            <td>Harding Thompson</td>
-                                            <td>1</td>
-                                            <td>Abeokuta</td>
-                                            <td>2008/06/08</td>
+                                            <td>IdeaPad 1</td>
+                                            <td>235698471</td>
+                                            <td>Norelle</td>
+                                            <td>02/14/2024</td>
                                             <td>10%</td>
                                         </tr>
                                     </tbody>

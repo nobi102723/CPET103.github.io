@@ -50,6 +50,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.request.contextPath}/partners">Partners</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/admin/dashboard">Dashboard</a>
+                    </li>
                 </ul>
             </div>
             <div class="navbar align-self-center d-flex">
