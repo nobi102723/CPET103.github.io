@@ -97,7 +97,7 @@
         <script src="${pageContext.request.contextPath}/Resources/js/bootstrap.bundle.min.js"></script>
         <script src="${pageContext.request.contextPath}/Resources/js/templatemo.js"></script>
         <script src="${pageContext.request.contextPath}/Resources/js/custom.js"></script>
-        <script>
+        <script type="text/javascript">
             function showModal(message) {
                 // Set the message content
                 document.getElementById("modalMessage").textContent = message;

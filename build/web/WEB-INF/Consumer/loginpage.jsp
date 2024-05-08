@@ -206,23 +206,6 @@
         </script>
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         <script type="text/javascript">
-            // Function to validate if the password and confirm password fields match
-            function validatePassword() {
-                var password = document.getElementById("validationpassword").value;
-                var confirmPassword = document.getElementById("validationconfirmp").value;
-
-                // Check if the passwords match
-                if (password !== confirmPassword) {
-                    document.getElementById("validationconfirmp").setCustomValidity("Must contain the same password.");
-                } else {
-                    document.getElementById("validationconfirmp").setCustomValidity("");
-                }
-            }
-
-            document.getElementById("validationpassword").addEventListener("input", validatePassword);
-            document.getElementById("validationconfirmp").addEventListener("input", validatePassword);
-        </script>
-        <script type="text/javascript">
             var daySelect = document.getElementById("validationDay");
             var monthSelect = document.getElementById("validationMonth");
             var yearSelect = document.getElementById("validationYear");
@@ -272,12 +255,28 @@
                         event.stopPropagation();
                     } else {
                         showModal("You Successfully Registered an Account!");
-                        event.preventDefault();
                     }
 
                     form.addClass('was-validated');
                 });
             });
+        </script>
+        <script type="text/javascript">
+            // Function to validate if the password and confirm password fields match
+            function validatePassword() {
+                var password = document.getElementById("validationpassword").value;
+                var confirmPassword = document.getElementById("validationconfirmp").value;
+
+                // Check if the passwords match
+                if (password !== confirmPassword) {
+                    document.getElementById("validationconfirmp").setCustomValidity("Must contain the same password.");
+                } else {
+                    document.getElementById("validationconfirmp").setCustomValidity("");
+                }
+            }
+
+            document.getElementById("validationpassword").addEventListener("input", validatePassword);
+            document.getElementById("validationconfirmp").addEventListener("input", validatePassword);
         </script>
         <script type="text/javascript">
             // Toggles between Sign-in and Sign-up form

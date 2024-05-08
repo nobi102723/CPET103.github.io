@@ -36,33 +36,33 @@
                                 <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
                             </a>
                             <ul class="collapse show list-unstyled pl-3">
-                                <li><a class="text-decoration-none" href="search.html?q=acer">Acer</a></li>
-                                <li><a class="text-decoration-none" href="search.html?q=asus">Asus</a></li>
-                                <li><a class="text-decoration-none" href="search.html?q=dell">Dell</a></li>
-                                <li><a class="text-decoration-none" href="search.html?q=lenovo">Lenovo</a></li>
-                                <li><a class="text-decoration-none" href="search.html?q=msi">MSI</a></li>
+                                <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/shop">Acer</a></li>
+                                <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/shop">Asus</a></li>
+                                <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/shop">Dell</a></li>
+                                <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/shop">Lenovo</a></li>
+                                <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/shop">MSI</a></li>
                             </ul>
                             <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
                                 Pheripherals
                                 <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
                             </a>
                             <ul class="collapse show list-unstyled pl-3">
-                                <li><a class="text-decoration-none" href="search.html?q=acer">Keyboard</a></li>
-                                <li><a class="text-decoration-none" href="search.html?q=asus">Mouse</a></li>
-                                <li><a class="text-decoration-none" href="search.html?q=dell">Monitor</a></li>
-                                <li><a class="text-decoration-none" href="search.html?q=lenovo">Printer</a></li>
-                                <li><a class="text-decoration-none" href="search.html?q=msi">Webcam</a></li>
+                                <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/shop">Keyboard</a></li>
+                                <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/shop">Mouse</a></li>
+                                <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/shop">Monitor</a></li>
+                                <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/shop">Printer</a></li>
+                                <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/shop">Webcam</a></li>
                             </ul>
                             <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
                                 Accesories
                                 <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
                             </a>
                             <ul class="collapse show list-unstyled pl-3">
-                                <li><a class="text-decoration-none" href="search.html?q=acer">Case Bag</a></li>
-                                <li><a class="text-decoration-none" href="search.html?q=asus">Stand</a></li>
-                                <li><a class="text-decoration-none" href="search.html?q=dell">Screen Protector</a></li>
-                                <li><a class="text-decoration-none" href="search.html?q=lenovo">USB Hub</a></li>
-                                <li><a class="text-decoration-none" href="search.html?q=msi">Cooling Pad </a></li>
+                                <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/shop">Case Bag</a></li>
+                                <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/shop">Stand</a></li>
+                                <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/shop">Screen Protector</a></li>
+                                <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/shop">USB Hub</a></li>
+                                <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/shop">Cooling Pad </a></li>
                             </ul>
                         </li>
                     </ul>
@@ -73,7 +73,7 @@
                         <div class="col-md-6">
                             <ul class="list-inline shop-top-menu pb-3 pt-1">
                                 <li class="list-inline-item">
-                                    <a class="h3 text-dark text-decoration-none mr-3" href="shop.html">All</a>
+                                    <a class="h3 text-dark text-decoration-none mr-3" href="${pageContext.request.contextPath}/shop">All</a>
                                 </li>
                             </ul>
                         </div>
