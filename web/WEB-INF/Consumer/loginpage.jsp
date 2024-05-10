@@ -61,13 +61,13 @@
             </form>
 
             <!-- Signup Form -->
-            <form id="signup-form" class="needs-validation mx-auto" novalidate style="display: none;">
+            <form id="signup-form" class="needs-validation mx-auto" novalidate style="display: none;" onsubmit="return InputValidation()">
                 <h2 class="text-success text-center">Sign-up</h2>
 
                 <div class="mb-3 position-relative">
                     <label for="validationusername" class="form-label">Username</label>
                     <div class="input-group has-validation">                   
-                        <input type="text" class="form-control" id="validationusername" aria-describedby="validationUsernamePrepend" placeholder="Please enter a unique username" required pattern="[a-zA-Z0-9]{4,12}">
+                        <input type="text" class="form-control" id="validationusername" aria-describedby="validationUsernamePrepend" placeholder="Please enter a unique username" required pattern="^[a-zA-Z0-9]{4,12}$">
                         <div class="invalid-tooltip">
                             Must contain of 4 up to 12 characters or numbers.
                         </div>
@@ -158,7 +158,7 @@
                     <label for="validationmobile" class="form-label">Mobile Number</label>
                     <div class="input-group has-validation">
                         <span class="input-group-text" id="validationmobile">+63</span>
-                        <input type="text" class="form-control" id="validationmobile" aria-describedby="validationmobilePrepend" placeholder="Please enter your mobile number" required pattern="\d{11}">
+                        <input type="text" class="form-control" id="validationmobile" aria-describedby="validationmobilePrepend" placeholder="Please enter your mobile number" required pattern="^\d{11}$">
                         <div class="invalid-tooltip">
                             Must contain 11 numbers.
                         </div>
@@ -205,6 +205,21 @@
             }
         </script>
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+         <script type="text/javascript">
+            // Toggles between Sign-in and Sign-up form
+            const signInForm = document.getElementById("signin-form");
+            const signUpForm = document.getElementById("signup-form");
+            const toggleSignUpButton = document.getElementById("toggle-signup");
+            const toggleSignInButton = document.getElementById("toggle-signin");
+            toggleSignUpButton.addEventListener("click", () => {
+                signInForm.style.display = "none";
+                signUpForm.style.display = "block";
+            });
+            toggleSignInButton.addEventListener("click", () => {
+                signInForm.style.display = "block";
+                signUpForm.style.display = "none";
+            })
+        </script>
         <script type="text/javascript">
             var daySelect = document.getElementById("validationDay");
             var monthSelect = document.getElementById("validationMonth");
@@ -247,21 +262,54 @@
             }
 
             // Handles Form Validation
-            $(document).ready(function () {
-                $('.needs-validation').submit(function (event) {
-                    var form = $(this);
-                    if (!form[0].checkValidity()) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    } else {
-                        showModal("You Successfully Registered an Account!");
-                    }
+            function InputValidation() { //Function for Checking the Form returns a boolean
+                //ElementIds
+                var username = document.getElementById("validationusername").value;
+                var password = document.getElementById("validationpassword").value;
+                var firstname = document.getElementById("validationfirst").value;
+                var middlename = document.getElementById("validationmiddle").value;
+                var lastname = document.getElementById("validationlast").value;
+                var address = document.getElementById("validationaddress").value;
+                var number = document.getElementById("validationmobile").value;
+                //RegEx
+                var usernameRegex = /^[a-zA-Z0-9]{4,12}$/;
+                var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$&*])[A-Za-z\d!@#$&*]{8,16}$/;
+                var firstnameRegex = /^[a-zA-Z]+(?: [a-zA-Z]+)*$/;
+                var middlenameRegex = /^[a-zA-Z]+(?: [a-zA-Z]+)*$/;
+                var lastnameRegex = /^[a-zA-Z]{2,}(?: [a-zA-Z]+)*$/;
+                var addressRegex = /^[a-zA-Z0-9#.,\/]+(?: [a-zA-Z0-9#.,\/]+)*$/;
+                var numberRegex = /^\d{11}$/;
+                //Checks if the input matches with the requirement
+                if (!usernameRegex.test(username)) {
+                    return false; //Returns false if not and the form will not go through
+                }
 
-                    form.addClass('was-validated');
-                });
-            });
-        </script>
-        <script type="text/javascript">
+                if (!passwordRegex.test(password)) {
+                    return false;
+                }
+
+                if (!firstnameRegex.test(firstname)) {
+                    return false;
+                }
+
+                if (!middlenameRegex.test(middlename)) {
+                    return false;
+                }
+
+                if (!lastnameRegex.test(lastname)) {
+                    return false;
+                }
+
+                if (!addressRegex.test(address)) {
+                    return false;
+                }
+
+                if (!numberRegex.test(number)) {
+                    return false;
+                }
+
+                return true; //Returns true if the input is within the requirement
+            }
             // Function to validate if the password and confirm password fields match
             function validatePassword() {
                 var password = document.getElementById("validationpassword").value;
@@ -274,24 +322,23 @@
                     document.getElementById("validationconfirmp").setCustomValidity("");
                 }
             }
-
             document.getElementById("validationpassword").addEventListener("input", validatePassword);
             document.getElementById("validationconfirmp").addEventListener("input", validatePassword);
-        </script>
-        <script type="text/javascript">
-            // Toggles between Sign-in and Sign-up form
-            const signInForm = document.getElementById("signin-form");
-            const signUpForm = document.getElementById("signup-form");
-            const toggleSignUpButton = document.getElementById("toggle-signup");
-            const toggleSignInButton = document.getElementById("toggle-signin");
-            toggleSignUpButton.addEventListener("click", () => {
-                signInForm.style.display = "none";
-                signUpForm.style.display = "block";
+            
+            //Checks and Alerts the user if the Form is Successfully submitted through
+            $(document).ready(function () { 
+                $('.needs-validation').submit(function (event) {
+                    var form = $(this);
+                    if (!form[0].checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    } else {
+                        showModal("You Successfully Registered an Account!");
+                    }
+
+                    form.addClass('was-validated');
+                });
             });
-            toggleSignInButton.addEventListener("click", () => {
-                signInForm.style.display = "block";
-                signUpForm.style.display = "none";
-            })
         </script>
         <!-- End Script -->
     </body>
