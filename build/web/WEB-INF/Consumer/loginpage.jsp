@@ -319,7 +319,6 @@
                     document.getElementById("validationconfirmp").setCustomValidity("");
                 }
             }
-            document.getElementById("validationpassword").addEventListener("input", validatePassword);
             document.getElementById("validationconfirmp").addEventListener("input", validatePassword);
             
             //Checks and Alerts the user if the Form is Successfully submitted through
