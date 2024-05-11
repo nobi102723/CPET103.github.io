@@ -237,13 +237,10 @@
                 }
             }
 
-            // Generate options for day (1 to 31)
             generateOptions(daySelect, 1, 31);
 
-            // Generate options for month (1 to 12)
             generateOptions(monthSelect, 1, 12);
 
-            // Generate options for year (e.g., from 1900 to current year)
             generateOptions(yearSelect, 1900, currentYear);
         </script>
         <script type="text/javascript">
