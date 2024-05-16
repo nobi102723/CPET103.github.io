@@ -25,8 +25,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <!-- Load fonts style after rendering the layout styles -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/css/fontawesome.min.css">
-
-
     </head>
 
     <body>
@@ -117,17 +115,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             </div>
             <div class="row">
                 <div class="col-12 col-md-4 p-5 mt-3">
-                    <a href="${pageContext.request.contextPath}/shop"><img src="./Resources/products/Asus/logo.png" class="rounded-circle img-fluid border" style="width: 3500px; height: 300px;"></a>
+                    <a href="${pageContext.request.contextPath}/shop"><img src="./Resources/products/Asus/logo.png" class="img-fluid" style="width: 3500px; height: 300px;"></a>
                     <h5 class="text-center mt-3 mb-3">Asus</h5>
                     <p class="text-center"><a class="btn btn-success" href="${pageContext.request.contextPath}/shop">Go Shop</a></p>
                 </div>
                 <div class="col-12 col-md-4 p-5 mt-3">
-                    <a href="${pageContext.request.contextPath}/shop"><img src="./Resources/products/Acer/logo.png" class="rounded-circle img-fluid border" style="width: 3500px; height: 300px;"></a>
+                    <a href="${pageContext.request.contextPath}/shop"><img src="./Resources/products/Acer/logo.png" class="img-fluid" style="width: 3500px; height: 300px;"></a>
                     <h2 class="h5 text-center mt-3 mb-3">Acer</h2>
                     <p class="text-center"><a class="btn btn-success" href="${pageContext.request.contextPath}/shop">Go Shop</a></p>
                 </div>
                 <div class="col-12 col-md-4 p-5 mt-3">
-                    <a href="${pageContext.request.contextPath}/shop"><img src="./Resources/products/MSI/logo.png" class="rounded-circle img-fluid border" style="width: 3500px; height: 300px;"></a>
+                    <a href="${pageContext.request.contextPath}/shop"><img src="./Resources/products/MSI/logo.png" class="img-fluid" style="width: 3500px; height: 300px;"></a>
                     <h2 class="h5 text-center mt-3 mb-3">MSI</h2>
                     <p class="text-center"><a class="btn btn-success" href="${pageContext.request.contextPath}/shop">Go Shop</a></p>
                 </div>

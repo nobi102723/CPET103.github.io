@@ -102,7 +102,7 @@
                     </div>
                     <div class="col-md-4 mb-3 position-relative">
                         <label for="validationmiddle" class="form-label">Middle name</label>
-                        <input type="text" class="form-control" id="validationmiddle" placeholder="Middle Name" required pattern="^[a-zA-Z]+(?: [a-zA-Z]+)*$">
+                        <input type="text" class="form-control" id="validationmiddle" placeholder="Middle Name" pattern="^[a-zA-Z]+(?: [a-zA-Z]+)*$">
                         <div class="invalid-tooltip">
                             Must contain characters only.
                         </div>
@@ -199,34 +199,34 @@
         <script src="${pageContext.request.contextPath}/Resources/js/templatemo.js"></script>
         <script src="${pageContext.request.contextPath}/Resources/js/custom.js"></script>
         <script type="text/javascript" >
-            // Google Translation
-            function googleTranslateElementInit() {
-                new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-            }
+                // Google Translation
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                }
         </script>
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-         <script type="text/javascript">
-            // Toggles between Sign-in and Sign-up form
-            const signInForm = document.getElementById("signin-form");
-            const signUpForm = document.getElementById("signup-form");
-            const toggleSignUpButton = document.getElementById("toggle-signup");
-            const toggleSignInButton = document.getElementById("toggle-signin");
-            toggleSignUpButton.addEventListener("click", () => {
-                signInForm.style.display = "none";
-                signUpForm.style.display = "block";
-            });
-            toggleSignInButton.addEventListener("click", () => {
-                signInForm.style.display = "block";
-                signUpForm.style.display = "none";
-            })
+        <script type="text/javascript">
+               // Toggles between Sign-in and Sign-up form
+               const signInForm = document.getElementById("signin-form");
+               const signUpForm = document.getElementById("signup-form");
+               const toggleSignUpButton = document.getElementById("toggle-signup");
+               const toggleSignInButton = document.getElementById("toggle-signin");
+               toggleSignUpButton.addEventListener("click", () => {
+                   signInForm.style.display = "none";
+                   signUpForm.style.display = "block";
+               });
+               toggleSignInButton.addEventListener("click", () => {
+                   signInForm.style.display = "block";
+                   signUpForm.style.display = "none";
+               })
         </script>
         <script type="text/javascript">
+            //Function for Generating Options for Birthdates
             var daySelect = document.getElementById("validationDay");
             var monthSelect = document.getElementById("validationMonth");
             var yearSelect = document.getElementById("validationYear");
             var currentYear = new Date().getFullYear();
 
-            // Function to generate options for day, month, and year
             function generateOptions(selectElement, start, end) {
                 for (var i = start; i <= end; i++) {
                     var option = document.createElement("option");
@@ -237,11 +237,21 @@
                 }
             }
 
-            generateOptions(daySelect, 1, 31);
+            function updateDays() {
+                var month = monthSelect.value;
+                var year = yearSelect.value;
+                var daysInMonth = new Date(year, month, 0).getDate();
+
+                daySelect.innerHTML = '';
+                
+                daySelect.innerHTML = '<option selected disabled value="">Day</option>';
+                generateOptions(daySelect, 1, daysInMonth);
+            }
 
             generateOptions(monthSelect, 1, 12);
-
             generateOptions(yearSelect, 1900, currentYear);
+
+            monthSelect.addEventListener('change', updateDays);
         </script>
         <script type="text/javascript">
             function showModal(message) {
@@ -264,7 +274,6 @@
                 var username = document.getElementById("validationusername").value;
                 var password = document.getElementById("validationpassword").value;
                 var firstname = document.getElementById("validationfirst").value;
-                var middlename = document.getElementById("validationmiddle").value;
                 var lastname = document.getElementById("validationlast").value;
                 var address = document.getElementById("validationaddress").value;
                 var number = document.getElementById("validationmobile").value;
@@ -286,10 +295,6 @@
                 }
 
                 if (!firstnameRegex.test(firstname)) {
-                    return false;
-                }
-
-                if (!middlenameRegex.test(middlename)) {
                     return false;
                 }
 
@@ -319,10 +324,11 @@
                     document.getElementById("validationconfirmp").setCustomValidity("");
                 }
             }
+            document.getElementById("validationpassword").addEventListener("input", validatePassword);
             document.getElementById("validationconfirmp").addEventListener("input", validatePassword);
-            
+
             //Checks and Alerts the user if the Form is Successfully submitted through
-            $(document).ready(function () { 
+            $(document).ready(function () {
                 $('.needs-validation').submit(function (event) {
                     var form = $(this);
                     if (!form[0].checkValidity()) {

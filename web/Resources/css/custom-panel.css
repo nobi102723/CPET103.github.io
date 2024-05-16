@@ -1,8 +1,8 @@
 body {
-    background-color: #59ab6e;
+    background-color: whitesmoke;
 }
 .breadcrumb-item a,
 .breadcrumb-item.active {
-    color: white !important;
+    color: black !important;
     font-weight: bold;
 }

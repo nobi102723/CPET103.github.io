@@ -53,7 +53,7 @@
         <main id="main" class="main">
 
             <div class="pagetitle">
-                <h1 class="text-white">Dashboard</h1>
+                <h1 class="text-black">Dashboard</h1>
                 <nav>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -70,7 +70,7 @@
 
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title mb-0">Inventory</h5>
+                                <h5 class="card-title mb-0 text-black">Inventory</h5>
                                 <div>
                                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addModal">Add Product</button>
                                 </div>
